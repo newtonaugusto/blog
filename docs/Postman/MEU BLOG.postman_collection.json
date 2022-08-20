@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "f1fbd5ad-ce79-4555-88da-b999a573154c",
+		"name": "MEU BLOG",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20055523"
+	},
+	"item": [
+		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@admin.com.br\",\r\n    \"password\": \"@Senha@!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Artigos",
+			"item": [
+				{
+					"name": "Adicionar artigo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Lorem Ipsum 2\",\r\n    \"subtitle\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\",\r\n    \"type\": 0,\r\n    \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet augue sit amet ipsum varius pulvinar. Aenean pulvinar elit urna, quis venenatis enim facilisis non. Donec gravida ipsum feugiat sapien vehicula venenatis. Phasellus vel sapien maximus, euismod augue sed, cursus odio. Vivamus rutrum mi lacinia nisi commodo consectetur. \",\r\n    \"status\": 1,\r\n    \"keyword_set\": [\r\n        {\r\n            \"name\": \"Lorem\"\r\n        },\r\n        {\r\n            \"name\": \"Ipsum\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/articles",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar artigo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Lorem\",\r\n    \"subtitle\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\",\r\n    \"type\": 0,\r\n    \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet augue sit amet ipsum varius pulvinar. Aenean pulvinar elit urna, quis venenatis enim facilisis non. Donec gravida ipsum feugiat sapien vehicula venenatis. Phasellus vel sapien maximus, euismod augue sed, cursus odio. Vivamus rutrum mi lacinia nisi commodo consectetur. \",\r\n    \"status\": 1,\r\n    \"keyword_set\": [\r\n        {\r\n            \"name\": \"maximus\"\r\n        },\r\n        {\r\n            \"name\": \"cursus\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/articles/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"articles",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalhe do artigo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/articles/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"articles",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar artigos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Lorem Ipsum\",\r\n    \"subtitle\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\",\r\n    \"type\": 0,\r\n    \"content\": \"Conteúdo do post\",\r\n    \"status\": 1,\r\n    \"keyword_set\": [\r\n        {\r\n            \"name\": \"aviação\"\r\n        },\r\n        {\r\n            \"name\": \"tripulação\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/articles",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir artigo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/articles/10",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"articles",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYxMDUxNDAyLCJpYXQiOjE2NjA5NjUwMDIsImp0aSI6IjdkNmJiYzIwNDJiYzQ1OGQ4ZmMzZWY1Y2VlZTEyYzVhIiwiaWQiOjF9.gCmcRLwMwYjJquF0jappbiIGpZozh2sik-otRDfJZh5jqt1CoxjCq8QTolBonKJh8aFfQI5fR5DtBfrgJophcw",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
